@@ -1,10 +1,10 @@
 # NDEF Library for Arduino
 
+**Based on work of Don, ifullgaz, eecharlie, JiapengLi, the-real-orca and countless more.**
+
 Read and Write NDEF messages on NFC Tags with Arduino.
 
 NFC Data Exchange Format (NDEF) is a common data format that operates across all NFC devices, regardless of the underlying tag or device technology.
-
-This code works with the [Adafruit NFC Shield](https://www.adafruit.com/products/789), [Seeed Studio NFC Shield v2.0](http://www.seeedstudio.com/depot/nfc-shield-v20-p-1370.html) and the [Seeed Studio NFC Shield](http://www.seeedstudio.com/depot/nfc-shield-p-916.html?cPath=73). The library supports I2C for the Adafruit shield and SPI with the Seeed shields. The Adafruit Shield can also be modified to use SPI. It should also work with the [Adafruit NFC Breakout Board](https://www.adafruit.com/products/364).
 
 ### Supports 
  - Reading from Mifare Classic Tags with 4 byte UIDs.
@@ -15,7 +15,7 @@ This code works with the [Adafruit NFC Shield](https://www.adafruit.com/products
 
 ### Requires
 
-[Yihui Xiong's PN532 Library](https://github.com/Seeed-Studio/PN532)
+[PN532 Library](https://github.com/solhuebner/PN532)
 
 ## Getting Started
 
@@ -122,13 +122,3 @@ Tests can be run on an Uno without a NFC shield, since the NDEF logic is what is
 ## Warning
 
 This software is in development. It works for the happy path. Error handling could use improvement. It runs out of memory, especially on the Uno board. Use small messages with the Uno. The Due board can write larger messages. Please submit patches.
-
-## Book
-Need more info? Check out my book <a href="http://www.anrdoezrs.net/click-7521423-11260198-1430755877000?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920021193.do%3Fcmp%3Daf-prog-books-videos-product_cj_9781449372064_%2525zp&cjsku=0636920021193" target="_top">
-Beginning NFC: Near Field Communication with Arduino, Android, and PhoneGap</a><img src="http://www.lduhtrp.net/image-7521423-11260198-1430755877000" width="1" height="1" border="0"/>.
-
-<a href="http://www.tkqlhce.com/click-7521423-11260198-1430755877000?url=http%3A%2F%2Fshop.oreilly.com%2Fproduct%2F0636920021193.do%3Fcmp%3Daf-prog-books-videos-product_cj_9781449372064_%2525zp&cjsku=0636920021193" target="_top"><img src="http://akamaicovers.oreilly.com/images/0636920021193/cat.gif" border="0" alt="Beginning NFC"/></a><img src="http://www.awltovhc.com/image-7521423-11260198-1430755877000" width="1" height="1" border="0"/>
-
-## License
-
-[BSD License](https://github.com/don/Ndef/blob/master/LICENSE.txt) (c) 2013-2014, Don Coleman
