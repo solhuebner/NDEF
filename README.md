@@ -1,6 +1,6 @@
 # NDEF Library for Arduino
 
-**Based on work of Don, ifullgaz, eecharlie, JiapengLi, the-real-orca and countless more.**
+**Based on work of Don, ifullgaz, eecharlie, JiapengLi, the-real-orca, hirotakaster and countless more.**
 
 Read and Write NDEF messages on NFC Tags with Arduino.
 
