@@ -102,7 +102,7 @@ boolean MifareUltralight::isUnformatted()
 #ifdef NDEF_USE_SERIAL
         Serial.print(F("Error. Failed read page "));Serial.println(page);
 #endif
-        return false;
+        return true;
     }
 }
 
