@@ -54,7 +54,7 @@ class NdefMessage
         void print();
 #endif
     private:
-        NdefRecord _records[MAX_NDEF_RECORDS];
+        NdefRecord* _records[MAX_NDEF_RECORDS];
         uint16_t _offsets[MAX_NDEF_RECORDS];    //Stores address offsets of payloads in packaged NDEF
         unsigned int _recordCount;
 };
