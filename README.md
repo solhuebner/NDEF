@@ -135,17 +135,15 @@ This software is in development. Error handling could use improvement. It runs o
 
 ## TODO
 
-Include Type 4 support
+Include Type 4 support  
 https://github.com/aligot-cblue/NDEF/commit/14b9b9a3878bed15813c3c7f6ba446b125c3feff
 https://github.com/aligot-cblue/NDEF/commit/804949df8e34333cb895076261dd0bfa5ccc38f1
 
-Style cleanup?
+Style cleanup?  
 https://github.com/henrycjc/EasiNDEF/commits/master
 
-Mem leak fixes?
+Mem leak fixes?  
 https://github.com/ifullgaz/NDEF/commit/610e2593f85f9575ecab79ae9f837aff1b3cd044?branch=610e2593f85f9575ecab79ae9f837aff1b3cd044&diff=unified
 
-In case of STM32 issues?
+In case of STM32 issues?  
 https://github.com/LieBtrau/NDEF/commits/master
-
-
