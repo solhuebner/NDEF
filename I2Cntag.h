@@ -1,5 +1,5 @@
-#ifndef NTAG_H
-#define NTAG_H
+#ifndef I2C_NTAG_H
+#define I2C_NTAG_H
 
 #include "Arduino.h"
 #include <Bounce2.h>
@@ -89,4 +89,4 @@ private:
     bool _triggered;
 };
 
-#endif // NTAG_H
+#endif // I2C_NTAG_H
