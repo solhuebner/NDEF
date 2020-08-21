@@ -9,6 +9,7 @@
 // choose supported formats
 #define NDEF_SUPPORT_MIFARE_CLASSIC
 #define NDEF_SUPPORT_MIFARE_ULTRA
+//#define NDEF_SUPPORT_I2C_NTAG
 
 // Drivers
 #ifdef NDEF_SUPPORT_MIFARE_CLASSIC
@@ -17,7 +18,9 @@
 #ifdef NDEF_SUPPORT_MIFARE_ULTRA
 	#include <MifareUltralight.h>
 #endif
-
+#ifdef NDEF_SUPPORT_I2C_NTAG
+	#include <I2Cntag.h>
+#endif
 
 // tag types
 #define TAG_TYPE_MIFARE_CLASSIC (0)
