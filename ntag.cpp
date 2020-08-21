@@ -1,4 +1,4 @@
-#include "ntag.h"
+#include "I2Cntag.h"
 #ifdef ARDUINO_STM_NUCLEU_F103RB
 #include "HardWire.h"
 HardWire HWire(1, I2C_REMAP);// | I2C_BUS_RESET); // I2c1
@@ -9,7 +9,6 @@ HardWire HWire(1, I2C_REMAP);// | I2C_BUS_RESET); // I2c1
 #include <stdio.h>
 
 #include <ArduinoUnit.h>
-
 
 Ntag::Ntag(DEVICE_TYPE dt, byte fd_pin, byte vout_pin, byte i2c_address):
     _dt(dt),
@@ -671,7 +670,6 @@ bool Ntag::isAddressValid(BLOCK_TYPE type, byte blocknr){
     }
     return true;
 }
-
 
 void Ntag::printHex(byte* data, uint8_t len) {
     for(int i=0;i<len;i++){
