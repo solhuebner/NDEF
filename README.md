@@ -11,7 +11,8 @@ NFC Data Exchange Format (NDEF) is a common data format that operates across all
  - Writing to Mifare Classic Tags with 4 byte UIDs.
  - Reading from Mifare Ultralight tags.
  - Writing to Mifare Ultralight tags.
- - Peer to Peer with the Seeed Studio shield
+ - Peer to Peer
+ - I2C NTAG
 
 ### Requires
 
@@ -21,7 +22,7 @@ NFC Data Exchange Format (NDEF) is a common data format that operates across all
 
 To use the Ndef library in your code, include the following in your sketch
 
-For the Adafruit Shield using I2C 
+For I2C 
 
     #include <Wire.h>
     #include <PN532_I2C.h>
@@ -31,7 +32,7 @@ For the Adafruit Shield using I2C
     PN532_I2C pn532_i2c(Wire);
     NfcAdapter nfc = NfcAdapter(pn532_i2c);
 
-For the Seeed Shield using SPI
+For SPI
 
     #include <SPI.h>
     #include <PN532_SPI.h>
@@ -40,6 +41,15 @@ For the Seeed Shield using SPI
     
     PN532_SPI pn532spi(SPI, 10);
     NfcAdapter nfc = NfcAdapter(pn532spi);
+
+For HSU
+
+    #include <PN532_HSU.h>
+    #include <PN532.h>
+    #include <NfcAdapter.h>
+    
+    PN532_HSU pn532hsu(Serial1);
+    NfcAdapter nfc = NfcAdapter(pn532hsu);
 
 ### NfcAdapter
 
@@ -83,7 +93,7 @@ Clean a tag. Cleaning resets a tag back to a factory-like state. For Mifare Clas
 
 ### NfcTag 
 
-Reading a tag with the shield, returns a NfcTag object. The NfcTag object contains meta data about the tag UID, technology, size.  When an NDEF tag is read, the NfcTag object contains a NdefMessage.
+Reading a tag with the shield, returns a NfcTag object. The NfcTag object contains meta data about the tag UID, technology, size. When an NDEF tag is read, the NfcTag object contains a NdefMessage.
 
 ### NdefMessage
 
@@ -102,7 +112,7 @@ A NdefRecord carries a payload and info about the payload within a NdefMessage.
 
 ### Peer to Peer
 
-Peer to Peer is provided by the LLCP and SNEP support in the [Seeed Studio library](https://github.com/Seeed-Studio/PN532).  P2P requires SPI and has only been tested with the Seeed Studio shield.  Peer to Peer was tested between Arduino and Android or BlackBerry 10. (Unfortunately Windows Phone 8 did not work.) See [P2P_Send](examples/P2P_Send/P2P_Send.ino) and [P2P_Receive](examples/P2P_Receive/P2P_Receive.ino) for more info.
+Peer to Peer is provided by the LLCP and SNEP support in the [PN532 library](https://github.com/solhuebner/PN532). P2P requires SPI and has only been tested with the Seeed Studio shield. Peer to Peer was tested between Arduino and Android or BlackBerry 10. See [P2P_Send](examples/P2P_Send/P2P_Send.ino) and [P2P_Receive](examples/P2P_Receive/P2P_Receive.ino) for more info.
 
 ### Specifications
 
@@ -121,4 +131,21 @@ Tests can be run on an Uno without a NFC shield, since the NDEF logic is what is
     
 ## Warning
 
-This software is in development. It works for the happy path. Error handling could use improvement. It runs out of memory, especially on the Uno board. Use small messages with the Uno. The Due board can write larger messages. Please submit patches.
+This software is in development. Error handling could use improvement. It runs out of memory, especially on the Uno board. Use small messages with the Uno. The Due board can write larger messages. Please submit patches.
+
+## TODO
+
+Include Type 4 support
+https://github.com/aligot-cblue/NDEF/commit/14b9b9a3878bed15813c3c7f6ba446b125c3feff
+https://github.com/aligot-cblue/NDEF/commit/804949df8e34333cb895076261dd0bfa5ccc38f1
+
+Style cleanup?
+https://github.com/henrycjc/EasiNDEF/commits/master
+
+Mem leak fixes?
+https://github.com/ifullgaz/NDEF/commit/610e2593f85f9575ecab79ae9f837aff1b3cd044?branch=610e2593f85f9575ecab79ae9f837aff1b3cd044&diff=unified
+
+In case of STM32 issues?
+https://github.com/LieBtrau/NDEF/commits/master
+
+
